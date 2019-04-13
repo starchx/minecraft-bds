@@ -1,17 +1,17 @@
 [
     {
         "permission": "operator",
-        "xuid": "000901F916DF6F16",
+        "xuid": "2535444132622102",
         "name": "triplecold"
     },
     {
         "permission": "operator",
-        "xuid": "000901FCCC5B9DB1",
+        "xuid": "2535460062338481",
         "name": "triplecook"
     },
     {
         "permission": "operator",
-        "xuid": "000901FBA5F14F63",
+        "xuid": "2535455122870115",
         "name": "triplecoke"
     }
 ]

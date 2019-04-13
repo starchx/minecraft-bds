@@ -12,3 +12,11 @@ COPY permissions.json .
 COPY server.properties .
 COPY whitelist.json .
 
+WORKDIR /root/bedrock/worlds/dropper
+RUN curl -o dropper.zip http://download981.mediafire.com/j6ht3f5nxobg/7ggh5xqzsecog9u/The+Dropper+Remastered.mcworld && \
+    unzip dropper.zip && rm dropper.zip && \
+    echo 'dropper' > levelname.txt
+
+WORKDIR /root/bedrock
+RUN sed -i 's/level-name=.*/level-name=dropper/g' server.properties 
+CMD LD_LIBRARY_PATH=. ./bedrock_server
