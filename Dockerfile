@@ -19,4 +19,5 @@ RUN curl -o LuckyBlocksRace.zip https://download1340.mediafire.com/n4ex5g1h510g/
 
 WORKDIR /root/bedrock
 RUN sed -i 's/level-name=.*/level-name=LuckyBlocksRace/g' server.properties 
-CMD LD_LIBRARY_PATH=. ./bedrock_server
+ENV LD_LIBRARY_PATH=.
+CMD ["./bedrock_server"]
