@@ -12,11 +12,11 @@ COPY permissions.json .
 COPY server.properties .
 COPY whitelist.json .
 
-WORKDIR /root/bedrock/worlds/dropper
-RUN curl -o dropper.zip http://download981.mediafire.com/j6ht3f5nxobg/7ggh5xqzsecog9u/The+Dropper+Remastered.mcworld && \
-    unzip dropper.zip && rm dropper.zip && \
-    echo 'dropper' > levelname.txt
+WORKDIR /root/bedrock/worlds/LuckyBlocksRace
+RUN curl -o LuckyBlocksRace.zip https://download1340.mediafire.com/n4ex5g1h510g/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
+    unzip LuckyBlocksRace.zip && rm LuckyBlocksRace.zip && \
+    echo 'LuckyBlocksRace' > levelname.txt
 
 WORKDIR /root/bedrock
-RUN sed -i 's/level-name=.*/level-name=dropper/g' server.properties 
+RUN sed -i 's/level-name=.*/level-name=LuckyBlocksRace/g' server.properties 
 CMD LD_LIBRARY_PATH=. ./bedrock_server
