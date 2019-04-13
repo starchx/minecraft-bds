@@ -21,3 +21,5 @@ WORKDIR /root/bedrock
 RUN sed -i 's/level-name=.*/level-name=LuckyBlocksRace/g' server.properties 
 ENV LD_LIBRARY_PATH=.
 CMD ["./bedrock_server"]
+
+#docker run -d -p 19132:19132/udp starchx/minecraft-bds:v1.10
