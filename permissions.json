@@ -1,0 +1,17 @@
+[
+    {
+        "permission": "operator",
+        "xuid": "000901F916DF6F16",
+        "name": "triplecold"
+    },
+    {
+        "permission": "operator",
+        "xuid": "000901FCCC5B9DB1",
+        "name": "triplecook"
+    },
+    {
+        "permission": "operator",
+        "xuid": "000901FBA5F14F63",
+        "name": "triplecoke"
+    }
+]
