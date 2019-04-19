@@ -24,6 +24,12 @@ RUN curl -o ParkourIslands.zip https://s3-ap-southeast-2.amazonaws.com/chenit-re
     unzip ParkourIslands.zip && rm ParkourIslands.zip && \
     echo 'ParkourIslands' > levelname.txt
 
+# DefendTheCastle
+WORKDIR /root/bedrock/worlds/DefendTheCastle
+RUN curl -o DefendTheCastle.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/DefendTheCastle.mcworld && \
+    unzip DefendTheCastle.zip && rm DefendTheCastle.zip && \
+    echo 'DefendTheCastle' > levelname.txt
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.

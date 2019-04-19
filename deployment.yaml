@@ -17,6 +17,10 @@ spec:
       containers:
       - name: mcbds
         image: starchx/minecraft-bds:v1.10
+        imagePullPolicy: Always
+        env:
+        - name: default_level
+          value: DefendTheCastle
         ports:
         - containerPort: 19132
           protocol: UDP
