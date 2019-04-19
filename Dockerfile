@@ -14,13 +14,13 @@ COPY whitelist.json .
 
 # Lucky Blocks Race
 WORKDIR /root/bedrock/worlds/LuckyBlocksRace
-RUN curl -o LuckyBlocksRace.zip https://download1340.mediafire.com/d76dy1icn4kg/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
+RUN curl -o LuckyBlocksRace.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/LuckyBlocksRaceV6.1.mcworld && \
     unzip LuckyBlocksRace.zip && rm LuckyBlocksRace.zip && \
     echo 'LuckyBlocksRace' > levelname.txt
 
 # Parkour Islands
 WORKDIR /root/bedrock/worlds/ParkourIslands
-RUN curl -o ParkourIslands.zip http://download2260.mediafire.com/u5ku07yno0bg/4f91u2n4fdp6df0/%C2%A74Parkour+Islands+v0.1.4.2.mcworld && \
+RUN curl -o ParkourIslands.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/ParkourIslandsV0.1.4.2.mcworld && \
     unzip ParkourIslands.zip && rm ParkourIslands.zip && \
     echo 'ParkourIslands' > levelname.txt
 
