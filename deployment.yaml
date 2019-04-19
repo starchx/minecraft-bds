@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcbds-deployment
+  labels:
+    app: mcbds
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcbds
+  template:
+    metadata:
+      labels:
+        app: mcbds
+    spec:
+      containers:
+      - name: mcbds
+        image: starchx/minecraft-bds:v1.10
+        ports:
+        - containerPort: 19132
+          protocol: UDP
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
+    

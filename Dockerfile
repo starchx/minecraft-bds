@@ -12,14 +12,23 @@ COPY permissions.json .
 COPY server.properties .
 COPY whitelist.json .
 
+# Lucky Blocks Race
 WORKDIR /root/bedrock/worlds/LuckyBlocksRace
-RUN curl -o LuckyBlocksRace.zip https://download1340.mediafire.com/n4ex5g1h510g/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
+RUN curl -o LuckyBlocksRace.zip https://download2268.mediafire.com/4lu0k4kvouig/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
     unzip LuckyBlocksRace.zip && rm LuckyBlocksRace.zip && \
     echo 'LuckyBlocksRace' > levelname.txt
 
+# Parkour Islands
+WORKDIR /root/bedrock/worlds/ParkourIslands
+RUN curl -o ParkourIslands.zip http://download2260.mediafire.com/u5ku07yno0bg/4f91u2n4fdp6df0/%C2%A74Parkour+Islands+v0.1.4.2.mcworld && \
+    unzip ParkourIslands.zip && rm ParkourIslands.zip && \
+    echo 'ParkourIslands' > levelname.txt
+
+# Set the server default level
 WORKDIR /root/bedrock
-RUN sed -i 's/level-name=.*/level-name=LuckyBlocksRace/g' server.properties 
 ENV LD_LIBRARY_PATH=.
-CMD ["./bedrock_server"]
+ENV default_level=LuckyBlocksRace
+
+CMD ["sed -i 's/level-name=.*/level-name=${default_level}/g' server.properties && ./bedrock_server"]
 
 #docker run -d -p 19132:19132/udp starchx/minecraft-bds:v1.10
