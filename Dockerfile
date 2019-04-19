@@ -14,7 +14,7 @@ COPY whitelist.json .
 
 # Lucky Blocks Race
 WORKDIR /root/bedrock/worlds/LuckyBlocksRace
-RUN curl -o LuckyBlocksRace.zip https://download2268.mediafire.com/4lu0k4kvouig/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
+RUN curl -o LuckyBlocksRace.zip https://download1340.mediafire.com/d76dy1icn4kg/delhqss4y83pr50/LuckyBlocksRaceV6.1.mcworld && \
     unzip LuckyBlocksRace.zip && rm LuckyBlocksRace.zip && \
     echo 'LuckyBlocksRace' > levelname.txt
 
@@ -29,6 +29,6 @@ WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.
 ENV default_level=LuckyBlocksRace
 
-CMD ["sed -i 's/level-name=.*/level-name=${default_level}/g' server.properties && ./bedrock_server"]
+CMD sed -i "s/level-name=.*/level-name=${default_level}/g" server.properties ; LD_LIBRARY_PATH=. ; ./bedrock_server
 
 #docker run -d -p 19132:19132/udp starchx/minecraft-bds:v1.10
