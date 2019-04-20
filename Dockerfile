@@ -30,6 +30,12 @@ RUN curl -o DefendTheCastle.zip https://s3-ap-southeast-2.amazonaws.com/chenit-r
     unzip DefendTheCastle.zip && rm DefendTheCastle.zip && \
     echo 'DefendTheCastle' > levelname.txt
 
+# PrisonBreak
+WORKDIR /root/bedrock/worlds/PrisonBreak
+RUN curl -o PrisonBreak.zip https://dl.mcpedl.com/link/Prison-Break.mcworld && \
+    unzip PrisonBreak.zip && rm PrisonBreak.zip && \
+    echo 'PrisonBreak' > levelname.txt
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.
