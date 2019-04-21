@@ -32,7 +32,7 @@ RUN curl -o DefendTheCastle.zip https://s3-ap-southeast-2.amazonaws.com/chenit-r
 
 # PrisonBreak
 WORKDIR /root/bedrock/worlds/PrisonBreak
-RUN curl -o PrisonBreak.zip https://dl.mcpedl.com/link/Prison-Break.mcworld && \
+RUN curl -o PrisonBreak.zip https://s3.us-east-2.amazonaws.com/mcpedl/worlds/1078/Prison-Break.mcworld && \
     unzip PrisonBreak.zip && rm PrisonBreak.zip && \
     echo 'PrisonBreak' > levelname.txt
 
