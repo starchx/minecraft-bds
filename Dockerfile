@@ -36,6 +36,18 @@ RUN curl -o PrisonBreak.zip https://s3.us-east-2.amazonaws.com/mcpedl/worlds/107
     unzip PrisonBreak.zip && rm PrisonBreak.zip && \
     echo 'PrisonBreak' > levelname.txt
 
+# subnautica
+WORKDIR /root/bedrock/worlds/subnautica
+RUN curl -o subnautica.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/subnautica.mcworld && \
+    unzip subnautica.zip && rm subnautica.zip && \
+    echo 'subnautica' > levelname.txt
+
+# lastever360world
+WORKDIR /root/bedrock/worlds/lastever360world
+RUN curl -o lastever360world.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/lastever360world.mcworld && \
+    unzip lastever360world.zip && rm lastever360world.zip && \
+    echo 'lastever360world' > levelname.txt
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.
