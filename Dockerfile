@@ -24,7 +24,7 @@ RUN curl -o ParkourIslands.zip https://s3-ap-southeast-2.amazonaws.com/chenit-re
     unzip ParkourIslands.zip && rm ParkourIslands.zip && \
     echo 'ParkourIslands' > levelname.txt
 
-# DefendTheCastle
+# DefendTheCastle - this world is broken for now
 WORKDIR /root/bedrock/worlds/DefendTheCastle
 RUN curl -o DefendTheCastle.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/DefendTheCastle.mcworld && \
     unzip DefendTheCastle.zip && rm DefendTheCastle.zip && \
@@ -36,11 +36,11 @@ RUN curl -o PrisonBreak.zip https://s3.us-east-2.amazonaws.com/mcpedl/worlds/107
     unzip PrisonBreak.zip && rm PrisonBreak.zip && \
     echo 'PrisonBreak' > levelname.txt
 
-# subnautica
-WORKDIR /root/bedrock/worlds/subnautica
-RUN curl -o subnautica.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/subnautica.mcworld && \
-    unzip subnautica.zip && rm subnautica.zip && \
-    echo 'subnautica' > levelname.txt
+# subnautica - this world is broken for now
+# WORKDIR /root/bedrock/worlds/subnautica
+# RUN curl -o subnautica.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/subnautica.mcworld && \
+#     unzip subnautica.zip && rm subnautica.zip && \
+#     echo 'subnautica' > levelname.txt
 
 # lastever360world
 WORKDIR /root/bedrock/worlds/lastever360world
