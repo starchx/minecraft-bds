@@ -4,7 +4,7 @@ RUN apt update -y && apt install -y curl unzip
 
 WORKDIR /root/bedrock
 
-RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.10.0.7.zip && \
+RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.11.2.1.zip && \
     unzip bedrock-server.zip && \
     rm -f bedrock-server.zip
 
@@ -47,6 +47,12 @@ WORKDIR /root/bedrock/worlds/lastever360world
 RUN curl -o lastever360world.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/lastever360world.mcworld && \
     unzip lastever360world.zip && rm lastever360world.zip && \
     echo 'lastever360world' > levelname.txt
+
+# CastleSiege
+WORKDIR /root/bedrock/worlds/CastleSiege
+RUN curl -o CastleSiege.zip https://minecraft.net/assets/addons/castle-siege.mcworld && \
+    unzip CastleSiege.zip && rm CastleSiege.zip && \
+    echo 'CastleSiege' > levelname.txt
 
 # Set the server default level
 WORKDIR /root/bedrock
