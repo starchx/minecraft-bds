@@ -54,6 +54,12 @@ RUN curl -o CastleSiege.zip https://minecraft.net/assets/addons/castle-siege.mcw
     unzip CastleSiege.zip && rm CastleSiege.zip && \
     echo 'CastleSiege' > levelname.txt
 
+# SlimeWipeout
+WORKDIR /root/bedrock/worlds/SlimeWipeout
+RUN curl -o SlimeWipeout.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/Slime-Wipeout-Map.zip && \
+    unzip SlimeWipeout.zip && rm SlimeWipeout.zip && \
+    echo 'SlimeWipeout' > levelname.txt  
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mcbds
-        image: starchx/minecraft-bds:v1.10
+        image: starchx/minecraft-bds:v1.11
         imagePullPolicy: Always
         env:
         - name: default_level
