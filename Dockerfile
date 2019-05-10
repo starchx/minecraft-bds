@@ -63,7 +63,7 @@ RUN curl -o TheGames.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resource
 # MegaSkyblock
 WORKDIR /root/bedrock/worlds/MegaSkyblock
 RUN curl -o MegaSkyblock.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/Mega_Skyblock_v6.2_By_TGC__BU.mcworld && \
-    unzip MegaSkyblock.zip && rm MegaSkyblock.zip && \
+    unzip MegaSkyblock.zip || true && rm MegaSkyblock.zip && \
     echo 'MegaSkyblock' > levelname.txt
 
 # Set the server default level
