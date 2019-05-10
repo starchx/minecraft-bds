@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: default_level
-          value: SlimeWipeout 
+          value: TheGames
         ports:
         - containerPort: 19132
           protocol: UDP
