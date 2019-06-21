@@ -26,9 +26,9 @@ spec:
           protocol: UDP
         resources:
           requests:
-            memory: "1024Mi"
+            memory: "3072Mi"
             cpu: "1000m"
           limits:
-            memory: "2048Mi"
+            memory: "3072Mi"
             cpu: "2000m"
     
