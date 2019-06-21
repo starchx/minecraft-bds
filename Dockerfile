@@ -68,7 +68,7 @@ RUN curl -o MegaSkyblock.zip https://s3-ap-southeast-2.amazonaws.com/chenit-reso
 
 # Jurassic
 WORKDIR /root/bedrock/worlds/Jurassic
-RUN curl -o Jurassic.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/Jurassic/Jurassic+World+(Minecraft)+April+2019.mcworld && \
+RUN curl -o Jurassic.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/Jurassic/Jurassic+World+April+2019.mcworld && \
     unzip Jurassic.zip || true && rm Jurassic.zip && \
     echo 'Jurassic' > levelname.txt
 WORKDIR /root/bedrock/resource_packs
