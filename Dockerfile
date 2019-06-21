@@ -66,6 +66,14 @@ RUN curl -o MegaSkyblock.zip https://s3-ap-southeast-2.amazonaws.com/chenit-reso
     unzip MegaSkyblock.zip || true && rm MegaSkyblock.zip && \
     echo 'MegaSkyblock' > levelname.txt
 
+# Jurassic
+WORKDIR /root/bedrock/worlds/Jurassic
+RUN curl -o Jurassic.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/Jurassic/Jurassic+World+(Minecraft)+April+2019.mcworld && \
+    unzip Jurassic.zip || true && rm Jurassic.zip && \
+    echo 'Jurassic' > levelname.txt
+WORKDIR /root/bedrock/resource_packs
+WORKDIR /root/bedrock/behavior_packs
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.
