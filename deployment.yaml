@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: default_level
-          value: ParkourIslands
+          value: KCHolidayLuckyBlock
         ports:
         - containerPort: 19132
           protocol: UDP
