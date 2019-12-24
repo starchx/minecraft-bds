@@ -84,6 +84,12 @@ WORKDIR /root/bedrock/behavior_packs/Jurassic_Craft_Behaviors
 RUN curl -o Jurassic_Craft_Behaviors.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/Jurassic/Jurassic+Craft+Behaviors.mcpack && \
     unzip Jurassic_Craft_Behaviors.zip || true && rm Jurassic_Craft_Behaviors.zip
 
+# KCHolidayLuckyBlock
+WORKDIR /root/bedrock/worlds/KCHolidayLuckyBlock
+RUN curl -o KCHolidayLuckyBlock.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/KC+Holiday+Lucky-Block+Challenge+Games.mcworld && \
+    unzip KCHolidayLuckyBlock.zip || true && rm KCHolidayLuckyBlock.zip && \
+    echo 'KCHolidayLuckyBlock' > levelname.txt
+
 # Set the server default level
 WORKDIR /root/bedrock
 ENV LD_LIBRARY_PATH=.

@@ -11,3 +11,4 @@ spec:
   ports:
   - protocol: UDP
     port: 19132
+    nodePort: 31888
