@@ -4,7 +4,7 @@ RUN apt update -y && apt install -y curl unzip
 
 WORKDIR /root/bedrock
 
-RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.11.2.1.zip && \
+RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.1.4.zip && \
     unzip bedrock-server.zip && \
     rm -f bedrock-server.zip
 

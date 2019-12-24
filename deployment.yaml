@@ -16,11 +16,11 @@ spec:
     spec:
       containers:
       - name: mcbds
-        image: starchx/minecraft-bds:v1.11
+        image: starchx/minecraft-bds:v1.14
         imagePullPolicy: Always
         env:
         - name: default_level
-          value: Jurassic
+          value: ParkourIslands
         ports:
         - containerPort: 19132
           protocol: UDP
