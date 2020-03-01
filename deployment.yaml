@@ -9,6 +9,11 @@ spec:
   selector:
     matchLabels:
       app: mcbds-888
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -20,7 +25,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: default_level
-          value: WhiteParkour 
+          value: FindTheButton 
         ports:
         - containerPort: 19132
           protocol: UDP
@@ -45,6 +50,11 @@ spec:
   selector:
     matchLabels:
       app: mcbds-777
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -81,6 +91,11 @@ spec:
   selector:
     matchLabels:
       app: mcbds-999
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       labels:
