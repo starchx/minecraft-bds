@@ -42,6 +42,17 @@ RUN curl -o NewSkyblock.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resou
     unzip NewSkyblock.zip || true && rm NewSkyblock.zip && \
     echo 'NewSkyblock' > levelname.txt
 
+#CastleSiege
+WORKDIR /root/bedrock/worlds/CastleSiege
+RUN curl -o CastleSiege.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/Castle-Siege.mcworld && \
+    unzip CastleSiege.zip || true && rm CastleSiege.zip && \
+    echo 'CastleSiege' > levelname.txt
+
+#FindTheButton
+WORKDIR /root/bedrock/worlds/FindTheButton
+RUN curl -o FindTheButton.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/FindTheButtonPath.mcworld && \
+    unzip FindTheButton.zip || true && rm FindTheButton.zip && \
+    echo 'FindTheButton' > levelname.txt
 
 # Set the server default level
 WORKDIR /root/bedrock

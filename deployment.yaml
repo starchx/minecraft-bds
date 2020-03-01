@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mcbds-deployment
+  name: mcbds-deployment-888
   labels:
-    app: mcbds
+    app: mcbds-888
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mcbds
+      app: mcbds-888
   template:
     metadata:
       labels:
-        app: mcbds
+        app: mcbds-888
     spec:
       containers:
       - name: mcbds
@@ -26,9 +26,80 @@ spec:
           protocol: UDP
         resources:
           requests:
-            memory: "2048Mi"
+            memory: "1024Mi"
             cpu: "500m"
           limits:
-            memory: "3072Mi"
+            memory: "2048Mi"
             cpu: "2000m"
     
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcbds-deployment-777
+  labels:
+    app: mcbds-777
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcbds-777
+  template:
+    metadata:
+      labels:
+        app: mcbds-777
+    spec:
+      containers:
+      - name: mcbds
+        image: starchx/minecraft-bds:v1.14
+        imagePullPolicy: Always
+        env:
+        - name: default_level
+          value: NewSkyblock 
+        ports:
+        - containerPort: 19132
+          protocol: UDP
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcbds-deployment-999
+  labels:
+    app: mcbds-999
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcbds-999
+  template:
+    metadata:
+      labels:
+        app: mcbds-999
+    spec:
+      containers:
+      - name: mcbds
+        image: starchx/minecraft-bds:v1.14
+        imagePullPolicy: Always
+        env:
+        - name: default_level
+          value: CastleSiege 
+        ports:
+        - containerPort: 19132
+          protocol: UDP
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "500m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
