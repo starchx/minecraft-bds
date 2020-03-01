@@ -32,7 +32,7 @@ RUN curl -o MegaSkyblock.zip https://s3-ap-southeast-2.amazonaws.com/chenit-reso
 
 # WhiteParkour
 WORKDIR /root/bedrock/worlds/WhiteParkour
-RUN curl -o WhiteParkour.zip https://dl.mcpedl.com/worlds/4106/PARKOUR-MAP-by-migz828.mcworld && \
+RUN curl -o WhiteParkour.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/PARKOUR-MAP-by-migz828.mcworld && \
     unzip WhiteParkour.zip || true && rm WhiteParkour.zip && \
     echo 'WhiteParkour' > levelname.txt
 
