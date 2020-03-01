@@ -4,7 +4,7 @@ RUN apt update -y && apt install -y curl unzip
 
 WORKDIR /root/bedrock
 
-RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.1.4.zip && \
+RUN curl -o bedrock-server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-1.14.30.2.zip && \
     unzip bedrock-server.zip && \
     rm -f bedrock-server.zip
 
@@ -35,12 +35,6 @@ WORKDIR /root/bedrock/worlds/PrisonBreak
 RUN curl -o PrisonBreak.zip https://s3.us-east-2.amazonaws.com/mcpedl/worlds/1078/Prison-Break.mcworld && \
     unzip PrisonBreak.zip && rm PrisonBreak.zip && \
     echo 'PrisonBreak' > levelname.txt
-
-# subnautica - this world is broken for now
-# WORKDIR /root/bedrock/worlds/subnautica
-# RUN curl -o subnautica.zip https://s3-ap-southeast-2.amazonaws.com/chenit-resources/mcbds-maps/subnautica.mcworld && \
-#     unzip subnautica.zip && rm subnautica.zip && \
-#     echo 'subnautica' > levelname.txt
 
 # lastever360world - this world is broken for now
 WORKDIR /root/bedrock/worlds/lastever360world
@@ -89,6 +83,12 @@ WORKDIR /root/bedrock/worlds/KCHolidayLuckyBlock
 RUN curl -o KCHolidayLuckyBlock.zip https://chenit-resources.s3-ap-southeast-2.amazonaws.com/mcbds-maps/KC+Holiday+Lucky-Block+Challenge+Games.mcworld && \
     unzip KCHolidayLuckyBlock.zip || true && rm KCHolidayLuckyBlock.zip && \
     echo 'KCHolidayLuckyBlock' > levelname.txt
+
+# WhiteParkour
+WORKDIR /root/bedrock/worlds/WhiteParkour
+RUN curl -o WhiteParkour.zip https://dl.mcpedl.com/worlds/4106/PARKOUR-MAP-by-migz828.mcworld && \
+    unzip WhiteParkour.zip || true && rm WhiteParkour.zip && \
+    echo 'WhiteParkour' > levelname.txt
 
 # Set the server default level
 WORKDIR /root/bedrock

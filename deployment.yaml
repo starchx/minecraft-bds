@@ -20,14 +20,14 @@ spec:
         imagePullPolicy: Always
         env:
         - name: default_level
-          value: KCHolidayLuckyBlock
+          value: WhiteParkour 
         ports:
         - containerPort: 19132
           protocol: UDP
         resources:
           requests:
-            memory: "3072Mi"
-            cpu: "1000m"
+            memory: "2048Mi"
+            cpu: "500m"
           limits:
             memory: "3072Mi"
             cpu: "2000m"
