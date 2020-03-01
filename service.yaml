@@ -28,7 +28,7 @@ spec:
   ports:
   - protocol: UDP
     port: 19132
-    nodePort: 31889
+    nodePort: 31777
 
 ---
 
@@ -45,4 +45,4 @@ spec:
   ports:
   - protocol: UDP
     port: 19132
-    nodePort: 31890
+    nodePort: 31999
